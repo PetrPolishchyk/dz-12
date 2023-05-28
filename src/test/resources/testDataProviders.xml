@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="dz-11">
+
+    <test name="Run all tests with data provider using">
+        <groups>
+            <run>
+                <include name="TestIsRetired"/>
+                <exclude name="TestIsNotRetired"/>
+                <include name="TestChildren"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="man.TestIsManRetired"/>
+            <class name="man.TestDoesManHaveManyChildren"/>
+            <class name="woman.TestIsWomenRetired"/>
+            <class name="woman.TestDoesWomenHavaManyChildren"/>
+        </classes>
+    </test>
+
+</suite>
