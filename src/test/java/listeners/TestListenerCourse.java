@@ -1,5 +1,6 @@
 package listeners;
 
+import io.qameta.allure.Allure;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -8,6 +9,7 @@ public class TestListenerCourse implements ITestListener {
     @Override
     public void onTestStart(ITestResult result) {
         System.out.println(String.format("Test [%s] was started", result.getName()));
+        Allure.addAttachment("Logs", "text", String.format("Test [%s] was started", result.getName()));
     }
 
     @Override

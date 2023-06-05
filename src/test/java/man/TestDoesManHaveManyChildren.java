@@ -2,7 +2,7 @@ package man;
 
 import DataProviders.DataProviderChildrenCount;
 import com.rd.person.Men;
-import jdk.jfr.Description;
+import io.qameta.allure.Description;
 import listeners.TestListenerCourse;
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -30,7 +30,7 @@ public class TestDoesManHaveManyChildren {
         log.info("The second men object has been created successfully");
     }
     //test many children
-    @Description("The test with Allure creating. TestDoesHaveManyChildren")
+    @Description("Test the men has many children")
     @Test(dataProvider = "toGetManyChildren", dataProviderClass = DataProviderChildrenCount.class, groups = "TestChildren")
     public void testDoesHaveManyChildren(int num){
         Reporter.log("[Reporter] Test testDoesHaveManyChildren is started");
@@ -38,6 +38,7 @@ public class TestDoesManHaveManyChildren {
         Assert.assertTrue(man.doesHaveManyChildren(), "Wrong result of children counting check");
     }
     //test not many children
+    @Description("Test the men does not have many children")
     @Test(dataProvider = "toGetNotManyChildren", dataProviderClass = DataProviderChildrenCount.class, groups = "TestChildren")
     public void testDoesNotHaveManyChildren(int num){
         manAnother.setChildrenCount(num);
