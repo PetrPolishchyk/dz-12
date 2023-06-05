@@ -11,12 +11,6 @@ import org.testng.annotations.Test;
 public class TestIsWomenRetired {
     private Women women;
     private Women womenAnother;
-    //create a new woman person
-//    @BeforeClass
-//    public void addNewWomenObject(){
-//        women = new Women("Oksana", "Vaks", 64, "Serhiy Ovodov", true);
-//        womenAnother = new Women("Viktoria", "Box", 30, "Oleh Robert", true);
-//    }
     //test retired
     @Test(dataProvider = "womenAfterRetired", dataProviderClass = DataProviderWomen.class, groups = {"TestIsRetired"})
     public void testIsRetired(String firstName, String lastName, int age, String partner, boolean hasChild){

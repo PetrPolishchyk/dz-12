@@ -1,3 +1,6 @@
 /dz-11.iml
 /.idea/
 /target/
+/test-output/
+/allure-results/
+/oldPom.txt
